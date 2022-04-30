@@ -2,13 +2,18 @@ package gopages
 
 import "fmt"
 
-type Metadata struct {
+type PageMetadata struct {
 	Key   string
 	Value string
 }
 
 type Page struct {
-	MetadataList []Metadata
+	MetadataList []PageMetadata
+}
+
+type PageInterface interface {
+	Metadata() Page
+	Print()
 }
 
 func (p Page) Metadata() Page {
